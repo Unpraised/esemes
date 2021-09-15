@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMS Banking BNI</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css_manual.css">
+    <link rel="stylesheet" href="bootstrap/css/select2.min.css"> <!-- CR19827-->
+    
+</head>
+<!-- CR19827-->
+<style type="text/css">
+    .select2-selection__rendered {
+        line-height: 43px !important;
+        margin-right: 35px;
+    }
+    .select2-selection {
+        height: 45px !important;
+    }
+    .select2-selection__arrow {
+        height: 43px !important;
+    }
+
+    .select2-container--default .select2-selection--single .select2-selection__arrow {
+        background: url("drawable/dropdown.png") no-repeat right #ddd;
+        -webkit-appearance: none;
+        background-size: contain;
+        width: 43px;
+        height: 45px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        position: absolute;
+    }
+
+</style>
+<!-- END CR19827-->
+<body class="bodyproses">
+  <div class="loader" style="display:none;"></div>
+	<div class="header">
+		<div class="container">
+			<div class="pull-left">
+				<div class="headerButton">
+					<figure><img src="drawable/logo_bni.png"/></figure>
+				</div>
+			</div>
+			<div class="pull-right">
+				 <figure><img class="img-responsive homeButton" src="drawable/homeButton.png" id="homeBackButton"/>
+			</div>
+		</div>
+	</div>
+
+    <div class="title">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-3">
+                    <figure><img class="img-responsive back" id="headerButton" src="drawable/back.png"/></figure>
+                </div>
+                <div class="col-xs-9">
+                    <p class = "titlesubmenu alignright">AIR/PAM & IPL</p><!--CR20018-->
+                </div> 
+            </div>
+        </div>
+    </div>
+
+  <div class="bgsend" id="menu">    
+      <div class="wrapper">
+    	<div class="container-fluid">
+    		<div class="row">
+                <div class="form-group textbox">
+                    <div class="col-xs-12">
+                        <label for="sel1" style="padding-left:10%;">Nama PDAM :</label>
+                    </div>
+                    <div class="col-xs-12">
+                        <select class="form-control textbox" style="margin:auto;" id="text1">
+                            <option value="AETRA">AETRA Air Jakarta</option>
+                            <option value="Manado">Air Manado</option>
+                            <option value="BSD">IPL/PAM BSD</option>
+                            <option value="PALYJA">PALYJA</option>
+                            <option value="ATBBatam">PDAM ATB BATAM</option> <!-- CR19827 -->
+                            <option value="ATSPalembang">PDAM ATS Palembang</option>
+                            <option value="Balangan">PDAM Balangan</option> <!-- END CR19827 -->
+                            <option value="Balikpapan">PDAM Balikpapan</option>
+                            <option value="BandarLampung">PDAM Bandar Lampung</option><!-- CR19827 -->
+                            <option value="BangkaBarat">PDAM Bangka Barat</option> <!-- END CR19827 -->
+                            <option value="Banjarmasin">PDAM Banjarmasin</option>
+                            <option value="Banyumas">PDAM Banyumas</option>
+                            <option value="Barabai">PDAM Barabai</option><!-- CR19827 -->
+                            <option value="Berau">PDAM Berau</option>
+                            <option value="Bojonegoro">PDAM Bojonegoro</option>
+                            <option value="BukitTinggi">PDAM Bukit Tinggi</option> <!-- END CR19827 -->
+                            <option value="Cilacap">PDAM Cilacap</option>
+                            <option value="Denpasar">PDAM Denpasar</option> <!-- CR19827 -->
+                            <option value="Depok">PDAM Depok</option>
+                            <option value="IntanBanjar">PDAM Intan Banjar</option> <!-- CR19827 -->
+                            <option value="Jayapura">PDAM Jayapura</option>
+                            <option value="KabBandung">PDAM Kab. Bandung</option>
+                            <option value="KabSolok">PDAM Kab. Solok</option> <!-- END CR19827 -->
+                            <option value="KabBogor">PDAM Kabupaten Bogor</option>
+                            <option value="Klaten">PDAM Klaten</option><!-- CR19827 -->
+                            <option value="BANDUNG">PDAM Kota Bandung</option>
+                            <option value="Bekasi">PDAM Kota Bekasi</option> <!-- CR19827 -->
+                            <option value="Bogor">PDAM Kota Bogor</option>
+                            <option value="Malang">PDAM Kota Malang</option> <!-- CR19827 -->
+                            <option value="Semarang">PDAM Kota Semarang</option>
+                            <option value="Surabaya">PDAM Kota Surabaya</option>
+                            <option value="Makassar">PDAM Makasar</option> <!-- CR19827 -->
+                            <option value="Mamuju">PDAM Mamuju</option>
+                            <option value="Mataram">PDAM Mataram</option>
+                            <option value="Padang">PDAM Padang</option>
+                            <option value="PadangPanjang">PDAM Padang Panjang</option>
+                            <option value="Palembang">PDAM Palembang</option>
+                            <option value="Payakumbuh">PDAM Payakumbuh</option>
+                            <option value="Polewali">PDAM Polewali</option>
+                            <option value="Pontianak">PDAM Pontianak</option>
+                            <option value="Probolinggo">PDAM Probolinggo</option><!-- END CR19827 -->
+                            <option value="Purworejo">PDAM Purworejo</option>
+                            <option value="Samarinda">PDAM Samarinda</option><!-- CR19827 -->
+                            <option value="Sampit">PDAM Sampit</option>
+                            <option value="Sidoarjo">PDAM Sidoarjo</option><!-- END CR19827 -->
+                            <option value="Solo">PDAM Solo</option>
+                            <option value="TanahDatar">PDAM Tanah Datar</option><!-- CR19827 -->
+                            <option value="Wonosobo">PDAM Wonosobo</option><!-- END CR19827 -->
+                            <option value="Cianjur">Cianjur</option><!-- CR19971 -->
+                            <option value="KabIndramayu">Kab. Indramayu</option>
+                            <option value="Tasikmalaya">Tasikmalaya</option>
+                            <option value="Subang">Subang</option>
+                            <option value="Sukabumi">Sukabumi</option>
+                            <option value="Gresik">Gresik</option>
+                            <option value="Pasuruan">Pasuruan</option>
+                            <option value="KabSukabumi">Kab. Sukabumi</option> <!-- END CR19971 -->
+                            <option value="KabBoyolali">Kab. Boyolali</option><!-- CR19972 -->
+                            <option value="KabMalang">Kab. Malang</option>
+                            <option value="KabKaranganyar">Kab. Karanganyar</option>
+                            <option value="KabKebumen">Kab. Kebumen</option>
+                            <option value="KabKudus">Kab. Kudus</option>
+                            <option value="KabPati">Kab. Pati (Tirta Bening)</option>
+                            <option value="Magelang">Magelang</option>
+                            <option value="KabSitubondo">Kab. Situbondo</option>
+                            <option value="KabSukoharjo">Kab. Sukoharjo</option>
+                            <option value="Madiun">Madiun</option>
+                            <option value="KabJepara">Kab. Jepara</option>
+                            <option value="KabBanyuwangi">Kab. Banyuwangi</option>
+                            <option value="KabJember">Kab. Jember</option>
+                            <option value="KabJombang">Kab. Jombang</option>
+                            <option value="KabGarut">Kab. Garut</option>
+                            <option value="Pekalongan">Pekalongan</option>
+                            <option value="Ponorogo">Ponorogo</option> <!-- END CR19972 -->
+                            <option value="Tirtanadi">Tirtanadi</option><!-- CR19973 -->
+                            <option value="Solok">Solok</option> <!-- END CR19973 -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+    		<div class="row">
+    			<div class="form-group textbox">
+    				<div class="col-xs-12">
+                        <label for="text">No. Pelanggan:</label>
+                    </div>
+    				<div class="col-xs-12">
+                        <input type="number" class="form-control textbox" style="margin:auto;" id="text2" onkeyup="limit(2,16)">
+                    </div>
+    			</div>
+    		</div>
+            <div class="col-xs-12 alignright">
+                <div id="favorit-group">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 prosesButton" id="air_listrik">
+                    <button class="button"><strong>Proses</strong></button>
+                </div>
+            </div> 
+            <div class="row">
+                <div class="homePadding" style="display:none">
+                    <div class="col-xs-12" id="homeBackButton1">
+                    <figure><img class="img-responsive homeButton" id="headerButton" src="drawable/homeButton.png"/></figure>
+                </div>
+            </div>
+        </div> 
+		
+	</div>
+    
+    </div>
+    </div>
+	
+	<!-- Javascript -->
+	<script src="bootstrap/js/jquery-1.12.1.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/select2.min.js"></script><!-- CR19827-->
+    <script src="js/slices.js"></script>
+	<script src="js/navigation.js"></script>
+    <script src="js/favorit.js" type="text/javascript"></script>
+    <script src="js/cordova/cordova.js" type="text/javascript"></script>
+    <script src="js/cordova/index.js" type="text/javascript"></script>
+    <script src="js/customBridge.js"></script>
+    <script src="js/execute.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#text1').select2();
+        });
+    </script>
+</body>
+
+</html>

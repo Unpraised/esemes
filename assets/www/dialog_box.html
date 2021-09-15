@@ -1,0 +1,68 @@
+<!--
+
+
+<style type="text/css">
+    body .modal{
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+</style>
+
+
+<!-- Modal
+<div class="modal  fade" id="show" role="dialog">
+<div class="modal-dialog ">
+
+  <!-- Modal content
+  <div class="modal-content">
+	<div class="modal-header">
+	  <h4 class="modal-title">Anda Akan Mengirim?</h4>
+	</div>
+	<div class="modal-body">
+	  <p id="popup" value="2"></p>
+	</div>
+	<div class="modal-footer">
+	  <button type="button" class="btn btn-warning" id="send" >Setuju</button>
+	  <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+	</div>
+  </div>
+  
+</div>
+</div>
+
+<script type="text/javascript">
+    $('document').ready(function(){
+      //  $('#show').modal('show');
+        $("#show").on("show", function(){
+            $("#send").on("click",function(){
+                alert("send");
+                $("#show").hide();
+            });
+
+        });
+    });
+
+	var text;
+	function setMessage(message){
+		text = message;
+	}
+	function send(){
+        var data =[text];
+
+        if(isFavorit()){
+            if(window.localStorage.length < 10){
+                addFavorit();
+                customBridge.cordovaExecute("SMS","sendSMS",data);
+            }else{
+                alert(" Maaf, fitur favorit maksimal 10");
+            }
+        }else{
+            customBridge.cordovaExecute("SMS","sendSMS",data);
+        }
+
+
+	}
+</script>
+
+!-->

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMS Banking BNI</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="bootstrap/css/jquery-ui.theme.1.11.4-white.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css_manual.css">
+
+    <!-- jquery !-->
+    <script src="bootstrap/js/jquery-1.12.1.min.js"></script>
+
+    <style type="text/css">
+        .btn-group button{
+            color: #262728;
+            font-size: 18px;
+            background-color: #f3f3f3;
+            border-color: #c9c9c9;
+            height: 12vw;
+        }
+    </style>
+</head>
+<body class="bodyproses">
+<div class="header">
+        <div class="container">
+            <div class="pull-left" id="headerButtonMain">
+                <div class="headerButton">
+                    <figure><img src="drawable/logo_bni.png"/></figure>
+                </div>
+            </div>
+            <div class="pull-right">
+                 <figure><img class="img-responsive homeButton" src="drawable/homeButton.png" id="homeBackButton1"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="title">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-3">
+                    <figure><img class="img-responsive back" id="headerButton" src="drawable/back.png"/></figure>
+                </div>
+                <div class="col-xs-9">
+                    <p class = "titlesubmenu alignright">DAFTAR FAVORIT</p>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="input-group">
+			  <input type="text" class="form-control searchbar" placeholder="Cari Daftar Favorit" id="searchFav" onkeyup="searchFav()">
+			  <span class="input-group-btn">
+				<button class="btn btn-default" onclick="searchFav()"><span class="glyphicon glyphicon-search icon-flipped"></span></button>
+			  </span>
+			</div>
+		</div>
+	</div>
+
+<div class="bgsend">
+    <div class="container-fluid" id="listFavorit">
+        <div class="row" style="margin-top:10px;">
+            <div class="col-xs-12" id="favoritItems">
+                <script type="text/javascript">
+                    $('document').ready(function(){
+                        viewFavorit();
+                    });
+
+                    function viewFavorit(){
+                        var storage = window.localStorage;
+                        $("#listFavorit").empty();
+                        for(var i = 0; i < storage.length; i++){
+                            var data = JSON.parse(storage.getItem(storage.key(i)));
+
+                            var content =
+                                    "<div class='text-center form-group ' style='margin-top:10px;' id='" + data.favoritID + "'><div class='btn-group btn-custom'>"+
+                                            "<button type='button' class='btn btn-sm col-xs-11' onclick='clickFavorit(\""+data.url+"\",\""+data.favoritID+"\")'>"+
+                                              "<span class='pull-left'>"+data.favoritID+"</span></button>"+
+                                            "<button type='button' class='btn btn-sm dropdown-toggle col-xs-1' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>"+
+                                              "<span class='caret'></span></button>"+
+                                              "<ul class='dropdown-menu' role='menu'>"+
+                                                "<li><a href='#' onclick='deleteFavorit(\""+data.favoritID+"\")'>Hapus</a></li>"+
+                                              "</ul>"+
+                                    "</div></div>";
+
+                            $("#listFavorit").append(content);
+                        }
+                    }
+
+                    function clickFavorit(url,id){
+                        if (url == "transfer_sms_tunai.html"){
+                            alert("Mohon maaf menu transaksi sudah ditutup. Informasi lebih lanjut hub. BNI Call 1500046.");
+                        }
+                        else{
+                            window.sessionStorage.setItem("favoritID",id);
+                            window.location.href = url;
+                        }
+                        
+                    }
+
+                    function deleteFavorit(id){
+                        var storage = window.localStorage;
+                        storage.removeItem(id);
+                        viewFavorit();
+                    }
+
+                </script>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Javascript -->
+<script src="bootstrap/js/jquery-ui.1.11.4.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/slices.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/favorit_search.js"></script>
+</body>
+
+</html>

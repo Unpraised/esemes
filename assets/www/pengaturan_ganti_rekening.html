@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMS Banking BNI</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="css/css_manual.css">
+    
+</head>
+
+<body class="bodyproses">
+<div class="loader" style="display:none;"></div>
+	<div class="header">
+        <div class="container">
+            <div class="pull-left" id="headerButtonMain">
+                <div class="headerButton">
+                    <figure><img src="drawable/logo_bni.png"/></figure>
+                </div>
+            </div>
+            <div class="pull-right">
+                 <figure><img class="img-responsive homeButton" src="drawable/homeButton.png" id="homeBackButton"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="title">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-3">
+					<figure><img class="img-responsive back" id="headerButton" src="drawable/back.png"/></figure>
+				</div>
+				<div class="col-xs-9">
+					<p class = "title alignright">GANTI REKENING</p>
+				</div> 
+			</div>
+		</div>
+	</div>
+
+	<div class="bgsend">
+	<div class="wrapper">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="form-group textbox">
+					<div class="col-xs-12">
+						<label for="tex1t">Rekening Baru:</label>
+					</div>
+					<div class="col-xs-12">
+						<input type="number" class="form-control textbox" style="margin:auto;" id="text1" onkeyup="limit(1,10)">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 prosesButton" id="gantiRekening">
+					<button class="button"><strong>Proses</strong></button>
+				</div>
+			</div>
+		</div>
+
+		
+	</div>
+	</div>
+
+	<!-- Javascript -->
+	<script src="bootstrap/js/jquery-1.12.1.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/slices.js"></script>
+	<script src="js/navigation.js"></script>
+    <script src="js/cordova/cordova.js" type="text/javascript"></script>
+    <script src="js/cordova/index.js" type="text/javascript"></script>
+    <script src="js/customBridge.js"></script>
+    <script src="js/execute.js"></script>
+    <!-- end JS -->
+<body>
+</body>
+</html>

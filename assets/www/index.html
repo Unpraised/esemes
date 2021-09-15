@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>SMS Banking BNI</title>
+
+    <!-- CSS -->
+    <script src="bootstrap/js/jquery-1.12.1.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/jquery-ui.theme.1.11.4.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css_manual.css">
+
+    <script src="js/ui_free_syntaq.js"></script>
+
+    <style>
+        ol, ul{
+            padding-left: 20px;    
+        }
+        .modal-content{
+            position: initial;
+        }
+    </style>
+    
+</head>
+
+<body>
+  
+    <p style="position:absolute; right:5px; font-size: 11px;">Ver 3.1.33</p>
+    <div class="header">
+        <div class="container">
+            <div class="pull-left">
+                <div class="headerButton">
+                    <figure><img src="drawable/logo_bni.png"/></figure>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    
+    <div class="title">
+        <div class="col-xs-9">
+            <!-- <div class="pull-left"> -->
+               <p class = "title">MENU UTAMA</p>
+            <!-- </div>  -->
+        </div>
+        <div class="col-xs-3" style="padding-left: 11vw;">
+            <!-- <div class="pull-right" id="pengaturan"> -->
+                <img id="pengaturan" class="settingbutton" src="drawable/settingbutton.png"/>
+            <!-- </div> -->
+        </div> 
+    </div>
+    
+
+    <div class="inner-bg menu">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-6 bg3" id="daftarFavorit">
+                    <div class="menuleft6">
+                        <img class="img-responsive center-block icon6" src="drawable/icon1.png" alt="">
+                        <p class="texticon6">Favorit</p>
+                    </div>
+                </div>
+                <div class="col-xs-6 bg4" id="informasi">
+                    <div class="menuright6">
+                        <img class="img-responsive center-block icon6" src="drawable/icon2.png" alt="">
+                        <p class="texticon6">Informasi</p>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="row">
+                <div class="col-xs-6 bg5" id="transfer">
+                    <div class="menuleft6">
+                        <img class="img-responsive center-block icon6" src="drawable/icon3.png" alt="">
+                        <p class="texticon6 white">Transfer</p>
+                    </div>
+                </div>
+                <div class="col-xs-6 bg6" id="pembayaran">
+                    <div class="menuright6">
+                        <img class="img-responsive center-block icon6" src="drawable/icon4.png" alt="">
+                        <p class="texticon6 white">Pembayaran</p>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="row">
+                <div class="col-xs-6 bg7" id="pembelian">
+                    <div class="menuleft6">
+                        <img class="img-responsive center-block icon6" src="drawable/icon5.png" alt="">
+                        <p class="texticon6 white">Pembelian</p>
+                    </div>
+                </div>
+                <div class="col-xs-6 bg8" id="ecommerce">
+                    <div class="menuright6">
+                        <img class="img-responsive center-block icon6" src="drawable/transparancy.png" alt="">
+                        <p class="texticon6 white" style="opacity: 0.01">.</p>
+                    </div>
+                </div>
+            </div> 
+
+            <!-- <div class="row">
+                <div class="col-xs-6 bg7" id="layananlain">
+                    <div class="menuleft">
+                        <img class="img-responsive center-block icon" src="drawable/icon7.png" alt="">
+                        <p class="texticon white">Layanan Lain</p>
+                    </div>
+                </div>
+                <div class="col-xs-6 bg8" id="recent">
+                    <div class="menuright">
+                        <img class="img-responsive center-block icon" src="drawable/icon8.png" alt="">
+                        <p class="texticon white">Recent Transaksi</p>
+                    </div>
+                </div>
+            </div>  -->
+
+            <!-- <div class="row">
+                <div class="col-xs-12 warna7" id="free_syntax">
+                    <div class="menubawah">
+                         <img class="img-responsive center-block iconbawah" src="drawable/icon7.png" alt="">
+                        <p class="texticonbawah white">Free Syntax</p>
+                    </div>
+                </div>
+            </div>   -->
+
+        </div>
+    </div>
+
+    
+    <div class="col-xs-12 freesyntax" style="bottom:1.5px;">
+            <div class="col-xs-9">
+                <input type="text" class="form-control formsyntax" placeholder="Ketik perintah" id="text1" onkeyup="clearEx()">
+            </div>
+            <div class="col-xs-3" id="free_syntax">
+                <button class="buttonsyntax"><strong>Proses</strong></button>
+            </div>
+            <div class="ex">    
+                <p id="ex" style="font-size: 10px;padding-top: 1px;"></p>
+            </div>
+            
+    </div>
+
+
+
+
+    <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title" style="text-align:center;font-size:medium;font-weight: 600;">Tips Keamanan Bertransaksi <br> BNI SMS Banking</h4>
+            </div>
+            <div class="modal-body" style="text-align: justify;text-justify: inter-word; font-size:smaller;height: 75vh;overflow-y: scroll;height: 75vh;overflow-y: scroll;">
+              <p>Dalam rangka meningkatkan keamanan dan kenyamanan Anda dalam bertransaksi menggunakan BNI SMS Banking, kami memiliki beberapa tips untuk menjaga keamanan akun BNI SMS Banking, antara lain:
+              <br>
+              <ol>
+                <li>Jaga kerahasiaan PIN SMS Banking.</li>
+                    <ul>
+                        <li>Jangan beritahukan PIN SMS Banking Anda kepada siapapun, termasuk petugas Bank.</li>
+                        <li>Hapus pesan SMS yang berisi data PIN SMS Banking Anda.</li>
+                        <li>Lakukan penggantian PIN SMS Banking Anda secara berkala.</li>
+                        <li>Hindari penggunaan PIN Standar (123456).</li>
+                    </ul>
+                <li>Waspada SIM Swap.
+                <br>
+                SIM swap adalah pengambilalihan kartu SIM ponsel untuk mengakses akun perbankan seorang. Pelaku mendatangi operator seluler dengan identitas palsu, lalu mengaku nomornya rusak atau hilang mereka meminta penggantian kartu SIM, atau dengan cara meminta upgrade SIM Card dari 3G ke 4G. Setelah melakukan verifikasi, operator seluler akan menerbitkan kartu SIM pengganti dan menonaktifkan kartu SIM yang masih berada ditangan pemilik yang sah. Pelaku akan melakukan transaksi finansial melalui ponsel.
+                <br>
+                Tips agar terhindar dari SIM Swap:
+                    <ul>
+                        <li>Jika SIM Anda mendadak tidak aktif laporkan segera ke operator seluler Anda.</li>
+                        <li>Jika menerima SMS atau email yang meminta anda untuk meng-klik tautan ke situs yang tidak jelas jangan meng-klik tautan tersebut.</ul>
+                        <li>Aktifkan fitur SMS notifikasi BNI agar Anda akan selalu terinformasi setiap ada transaksi finansial atau perubahan pada rekening.</ul>
+                    </ul>
+
+                </li>
+                <li>Jaga kerahasiaan data diri Anda.
+                <br>
+                Waspada terhadap segala modus penipuan yang mengatasnamakan petugas Bank atau pihak lainnya yang meminta data diri Anda (Nomor Identitas, Nomor HP, Nomor Kartu Debit BNI, Nama Ibu Kandung, dll).
+                <br><br>
+                Untuk informasi lebih lanjut hubungi BNI Call 1500046.
+                <br>
+                Nikmati kemudahan layanan BNI SMS Banking &quot;Simple, Fresh & Catchy&quot;
+                </li>
+              </ol> 
+              </p>
+            </div>
+            <div class="modal-footer" style="text-align:center;">
+              <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color: #e84e0e;color: white;width: 200px;">OK</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      
+
+    
+    
+    <!-- Javascript -->
+    <script src="bootstrap/js/jquery-ui.1.11.4.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/slices.js"></script>
+    <script src="js/cordova/cordova.js" type="text/javascript"></script>
+    <script src="js/customBridge.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/navigation_main_menu.js"></script>
+    <script src="js/execute.js"></script>
+    <script>
+   
+        $(function() {
+
+            $(window).on('resize', function(e) {
+              fungsi();
+            });
+
+            function fungsi() {
+                // alert("aa");
+              $( ".ui-autocomplete" ).hide();
+            }
+
+            })
+        
+        $(document).ready(function() {
+
+            var modalSecurity = sessionStorage.getItem("modalSecurity");
+            if((modalSecurity == null)||(modalSecurity == undefined)||(modalSecurity == "null")||(modalSecurity == "")) {
+                $('#myModal').modal('show');
+                sessionStorage.setItem("modalSecurity", "OK");
+            }
+        });
+
+    </script>
+</body>
+
+</html>

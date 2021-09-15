@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMS Banking BNI</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css_manual.css">
+    
+</head>
+
+<body class="bodyproses">
+<div class="loader" style="display:none;"></div>
+	<div class="header">
+        <div class="container">
+            <div class="pull-left" id="headerButtonMain">
+                <div class="headerButton">
+                    <figure><img src="drawable/logo_bni.png"/></figure>
+                </div>
+            </div>
+            <div class="pull-right">
+                 <figure><img class="img-responsive homeButton" src="drawable/homeButton.png" id="homeBackButton"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="title">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-3">
+					<figure><img class="img-responsive back" id="headerButton" src="drawable/back.png"/></figure>
+				</div>
+				<div class="col-xs-9">
+					<p class = "title alignright">PEMBELIAN</p>
+				</div> 
+			</div>
+		</div>
+	</div>
+
+
+	<div class="bgsend" id="menu">
+		<div class="wrapper">
+        	<div class="container-fluid">
+        		<div class="row">
+	                <div class="form-group textbox">
+	                    <div class="col-xs-12">  
+	                      <label for="sel1" style="padding-left:10%;">Operator :</label>
+	                    </div>
+	                    <div class="col-xs-12">  
+	                      <select class="form-control textbox" style="margin:auto;" id="text1" onchange="switchProvider()">
+	                        <option value="XLData">XL Data</option>
+	                        <option value="indosat">Indosat Ooredoo</option>
+							<option value="PULSA INTERNET TELKOMSEL">Pulsa Internet Telkomsel</option>
+	                        <option value="Paket Digital Telkomsel">Paket Digital Telkomsel</option>
+	                      </select>
+	                    </div>
+	                </div> 
+            	</div>
+
+            	<div class="row" id="xlOption">
+	                <div class="form-group textbox">
+	                    <div class="col-xs-12">  
+	                      <label for="sel1" id="dataLabel" style="padding-left:10%;">Denominasi :</label>
+	                    </div>
+	                    <div class="col-xs-12">  
+	                      <select class="form-control textbox" style="margin:auto;" id="text2">
+                              <option value = '' selected disabled hidden>Pilih denominasi paket data XL</option>
+							  <option value="30000">30.000</option>
+							  <option value="50000">50.000</option>
+							  <option value="59000">59.000</option>
+							  <option value="60000">60.000</option>
+							  <option value="89000">89.000</option>
+							  <option value="100000">100.000</option>
+							  <option value="129000">129.000</option>
+							  <option value="179000">179.000</option>
+							  <option value="239000">239.000</option>
+	                      </select>
+	                    </div>
+	                </div> 
+            	</div>
+				
+            	<div class="row" id="indosatOption">
+	                <div class="form-group textbox">
+	                    <div class="col-xs-12">  
+	                      <label for="sel1" id="dataLabel" style="padding-left:10%;">Jenis Paket :</label>
+	                    </div>
+	                    <div class="col-xs-12">  
+	                      <select class="form-control textbox" style="margin:auto;" id="text4">
+	                        <option value='INDOSATFREEDOM M'>Freedom Combo M</option>
+							<option value='INDOSATFREEDOM L'>Freedom Combo L</option>
+							<option value='INDOSATFREEDOM XL'>Freedom Combo XL</option>
+							<option value='INDOSATFREEDOM XXL'>Freedom Combo XXL</option>
+							<option value='INDOSATADDON 1GB'>Paket Internet 1GB</option>
+							<option value='INDOSATADDON 2GB'>Paket Internet 2GB</option>
+							<option value='INDOSATADDON 3GB'>Paket Internet 3GB</option>
+							<option value='INDOSATADDON 5GB'>Paket Internet 5GB</option>
+							<option value='EXTRA 2GB'>Extra Kuota 2GB</option>
+							<option value='EXTRA 4GB'>Extra Kuota 4GB</option>
+							<option value='EXTRA 6GB'>Extra Kuota 6GB</option>
+	                      </select>
+	                    </div>
+	                </div> 
+            	</div>
+				
+				<div class="row" id="telkomselOption">
+	                <div class="form-group textbox">
+	                    <div class="col-xs-12">  
+	                      <label for="sel1" id="dataLabel" style="padding-left:10%;">Denominasi :</label>
+	                    </div>
+	                    <div class="col-xs-12">  
+	                      <select class="form-control textbox" style="margin:auto;" id="text5">
+							<option value='25000'>25.000</option>
+							<option value='50000'>50.000</option>
+							<option value='100000'>100.000</option>
+							<option value='150000'>150.000</option>
+							<option value='200000'>200.000</option>
+							<option value='300000'>300.000</option>
+	                      </select>
+	                    </div>
+	                </div> 
+            	</div>
+				<div class="row" id="digitaltelkomselOption">
+					<div class="form-group textbox">
+						<div class="col-xs-12">
+							<label for="sel1" id="dataLabel" style="padding-left:10%;">Jenis Paket :</label>
+						</div>
+						<div class="col-xs-12">
+							<select class="form-control textbox" style="margin:auto;" id="text6">
+								<option value='Telkomsel Music 25K'>Telkomsel Music 25K</option>
+								<option value='Gamemax 25K'>Gamemax 25K</option>
+								<option value='Dunia Games 20K'>Dunia Games 20K</option>
+								<option value='Dunia Games 75K'>Dunia Games 75K</option>
+								<option value='Dunia Games 100K'>Dunia Games 100K</option>
+								<option value='Dunia Games 500K'>Dunia Games 500K</option>
+								<option value='Paket Voice 25K'>Paket Voice 25K</option>
+								<option value='Internet Combo 100K'>Internet Combo 100K</option>
+								<option value='Maxstream 100K'>Maxstream 100K</option>
+								<option value='Maxstream 150K'>Maxstream 150K</option>
+	                      </select>
+	                    </div>
+	                </div> 
+            	</div>
+				
+            	<div class="row" id="kodePeserta">
+	                <div class="form-group textbox">
+	                    <div class="col-xs-12"> 
+	                        <label for="text">No. Telepon :</label>
+	                    </div>
+	                    <div class="col-xs-12"> 
+	                        <input type="number" class="form-control textbox" style="margin:auto;" id="text3" onkeyup="limit(3,13)">
+	                    </div>
+	                </div>
+            	</div>
+
+        		<div class="col-xs-12 alignright">
+                	<div id="favorit-group">
+                	</div>
+            	</div>
+
+	            <div class="row">
+	                <div class="col-xs-12 prosesButton" id="paketData">
+	                    <button class="button"><strong>Proses</strong></button>
+	                </div>
+	            </div> 
+
+        	<div class="row">
+	            <div class="home">
+	                <div class="col-xs-12" id="homeBackButton">
+	                    <figure><img class="img-responsive homeButton" id="headerButton" src="drawable/homeButton.png"/>
+	                    </figure>
+	                </div>
+	            </div>
+        	</div>
+        </div>
+	</div>
+
+	<!-- Javascript -->
+    <script src="bootstrap/js/jquery-1.12.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/resize_homeButton.js"></script>
+    <script src="js/slices.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/favorit.js" type="text/javascript"></script>
+    <script src="js/cordova/cordova.js" type="text/javascript"></script>
+    <script src="js/cordova/index.js" type="text/javascript"></script>
+    <script src="js/customBridge.js"></script>
+    <script src="js/execute.js"></script>
+    <script src="js/ui_pembelian_paket_data.js"></script>
+</body>
+</html>
